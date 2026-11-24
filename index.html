@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Every Step Counts: dual-level stepwise credit assignment for flow-matching robot policy optimization.">
+<meta name="theme-color" content="#f8faff">
+<title>Every Step Counts: Flow-Matching Robot Policy Optimization</title>
+<link rel="stylesheet" href="style.css?v=3">
+<script src="script.js?v=2" defer></script>
+</head>
+<body>
+<a class="skip" href="#abstract">Skip to content</a>
+<nav class="site-nav" aria-label="Section navigation"><div class="nav-inner"><a class="nav-brand" href="#top">Every Step Counts</a><div class="nav-links"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#results">Results</a></div></div></nav>
+<main>
+<header class="hero" id="top"><div class="container">
+<h1><span>Every Step Counts:</span> A Dual-level Stepwise Credit Assignment Framework for Flow-Matching Robot Policy Optimization</h1>
+<div class="hero-meta"><div class="author-list"><span class="author">Jiayi Li<sup>1,2*</sup></span>, <span class="author"><a href="https://rovanji-pku.github.io/" target="_blank" rel="noopener noreferrer">Wenjie Lou</a><sup>1,2*</sup></span>, <span class="author">Tingrui Zhang<sup>1,2*</sup></span>, <span class="author">Wenxi Xu<sup>2,3*</sup></span>, <span class="author">Cong Zhou<sup>1,2</sup></span>, <span class="author">Zirui Meng<sup>1,2</sup></span>, <span class="author">Haopeng Cui<sup>2,4</sup></span>, <span class="author">Ruilin Yan<sup>2,5</sup></span>, <span class="author"><a href="https://github.com/Achtoria" target="_blank" rel="noopener noreferrer">Zhang Chen</a><sup>1,2</sup></span>, <span class="author">Ka Nam Lui<sup>1,2</sup></span>, <span class="author">Xiaojun Dai<sup>2,6</sup></span>, <span class="author">Changning Liu<sup>1,2</sup></span>, <span class="author">Wan Jiang<sup>1,2</sup></span>, <span class="author"><a href="https://ivan-zhong.github.io/" target="_blank" rel="noopener noreferrer">Yifan Zhong</a><sup>1,2</sup></span>, <span class="author"><a href="https://cypypccpy.github.io/" target="_blank" rel="noopener noreferrer">Yuanpei Chen</a><sup>1,2✉</sup></span>, <span class="author"><a href="https://yangyaodong.com/" target="_blank" rel="noopener noreferrer">Yaodong Yang</a><sup>1,2✉</sup></span></div>
+<div class="affiliations"><span><sup>1</sup> Peking University</span><span><sup>2</sup> PKU-PsiBot</span><span><sup>3</sup> Southern University of Science and Technology</span><span><sup>4</sup> Tsinghua University</span><span><sup>5</sup> Fudan University</span><span><sup>6</sup> University of California, Berkeley</span></div>
+<p class="author-notes"><span><sup>*</sup> Equal contribution</span><span><sup>✉</sup> Corresponding authors</span></p></div>
+<div class="hero-links" aria-label="Project resources"><span class="resource"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg><span>Paper</span><small>Coming soon</small></span><span class="resource"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg><span>Code</span><small>Coming soon</small></span></div>
+</div></header>
+<section id="abstract" class="section"><div class="container"><p class="eyebrow">Abstract</p><h2>Credit assignment at every step</h2><p>Reinforcement learning for flow-matching robot policies faces credit assignment challenges at two levels: understanding progress during physical execution and guiding intermediate steps during action generation. We introduce a dual-level framework that addresses both. The <strong>Evolving Reward Annotator (ERA)</strong> produces consistent dense rewards through an evolving Standard Operating Procedure (SOP) graph, while <strong>Direct Stepwise Q Optimization (DSQO)</strong> uses learned continuation values to guide each flow-matching step. Together, they enable effective post-training of robot policies across real-world manipulation and simulation.</p></div></section>
+<section id="method" class="section"><div class="container"><p class="eyebrow">Method</p><h2>Dual-level stepwise credit assignment</h2><p>ERA measures how the task progresses. DSQO improves how the policy generates actions.</p>
+<div class="figure-stack"><figure><img src="era.png" alt="ERA method: an evolving SOP graph and four-stage annotation process convert visual evidence into dense progress rewards." loading="lazy"><figcaption><h3>Evolving Reward Annotator</h3><p>A shared, evolving SOP graph grounds progress evaluation across rollouts, including stalls, failures, and recoveries.</p></figcaption></figure><figure><img src="dsqo.png" alt="DSQO architecture: reference rollouts provide continuation-value targets whose gradients guide stepwise flow velocity updates." loading="lazy"><figcaption><h3>Direct Stepwise Q Optimization</h3><p>Reference continuations assign values to intermediate flow states. Their gradients guide local velocity updates toward better actions.</p></figcaption></figure></div>
+</div></section>
+<section id="results" class="section"><div class="container"><p class="eyebrow">Results</p><h2>From progress supervision to policy improvement</h2><p>Across <strong>10 real-world manipulation tasks</strong>, our framework improves average success rate by <strong>26.4 percentage points</strong> over the initial SFT policies. DSQO reaches <strong>55.57% average success</strong> across 14 RoboCasa365 tasks. On human-labeled real-world episodes, ERA achieves <strong>78.1% balanced direction agreement</strong>, recognizing forward progress, stalls, and regressions.</p></div></section>
+</main>
+<footer><div class="container">Every Step Counts · PKU-PsiBot</div></footer>
+</body>
+</html>
